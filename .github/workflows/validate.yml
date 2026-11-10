@@ -1,0 +1,25 @@
+name: Validate cask
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  homebrew:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tap checkout and audit
+        run: |
+          brew tap --custom-remote fraziatest/local "$GITHUB_WORKSPACE"
+          brew audit --cask fraziatest/local/frazia
+      - name: Install and verify application
+        run: |
+          brew install --cask --appdir="$RUNNER_TEMP/Applications" fraziatest/local/frazia
+          codesign --verify --deep --strict "$RUNNER_TEMP/Applications/Frazia.app"
+          brew uninstall --cask fraziatest/local/frazia
+          test ! -e "$RUNNER_TEMP/Applications/Frazia.app"
