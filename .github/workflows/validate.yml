@@ -16,6 +16,7 @@ jobs:
       - name: Tap checkout and audit
         run: |
           brew tap --custom-remote fraziatest/local "$GITHUB_WORKSPACE"
+          brew trust --cask fraziatest/local/frazia
           brew audit --cask fraziatest/local/frazia
       - name: Install and verify application
         run: |
