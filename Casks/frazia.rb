@@ -8,7 +8,7 @@ cask "frazia" do
   homepage "https://dvoineu.github.io/Frazia/"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Frazia.app"
 end
