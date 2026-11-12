@@ -1,6 +1,6 @@
 cask "frazia" do
-  version "1.1,8"
-  sha256 "4d8042a4aedd2fd7f168d85608039c08b38c3eb1e4a513c3f5ecba1b85800542"
+  version "1.1,9"
+  sha256 "ab0d2a03faa20307cdf9267f0e2849fdd2ab4a8a08f59204a6bff00c442f9fac"
 
   url "https://github.com/dvoineu/VoiceHelper-downloads/releases/download/v#{version.csv.first}-build.#{version.csv.second}/Frazia-#{version.csv.first}-#{version.csv.second}-arm64.zip"
   name "Frazia"
