@@ -1,6 +1,6 @@
 cask "frazia" do
-  version "1.1,11"
-  sha256 "90612e1fb7c32578fa5fce3138ca63b15c63dab7d40adeb2921559dbcdbf204c"
+  version "1.2,12"
+  sha256 "ae17482036e807355230860ebfe3bff4a493ca876390a952387b84a458d1e35c"
 
   url "https://github.com/dvoineu/VoiceHelper-downloads/releases/download/v#{version.csv.first}-build.#{version.csv.second}/Frazia-#{version.csv.first}-#{version.csv.second}-arm64.zip"
   name "Frazia"
@@ -9,7 +9,7 @@ cask "frazia" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: :ventura
+  depends_on macos: :sequoia
 
   app "Frazia.app"
 end
